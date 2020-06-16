@@ -28,7 +28,7 @@ variable "domain" {
 }
 variable "hostname" {
     type = string
-    dfault = "hashisn000"
+    default = "hashisn000"
 }
 variable "templateName" {
     type = string

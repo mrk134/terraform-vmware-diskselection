@@ -24,7 +24,7 @@ variable "network_interface" {
 }
 variable "domain" {
     type = string
-    default = "corp.snow.com"
+    default = "my-v-world.fr"
 }
 variable "hostname" {
     type = string

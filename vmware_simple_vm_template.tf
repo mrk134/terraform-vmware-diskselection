@@ -71,10 +71,10 @@ thin_provisioned = "${data.vsphere_virtual_machine.template.disks.0.thin_provisi
         domain    = "${var.domain}"
       }
       network_interface {
-	    #ipv4_address = "${var.vmipaddress}"
-	    #ipv4_netmask = "28"
+	    ipv4_address = "${var.vmipaddress}"
+	    ipv4_netmask = "24"
       }
-      #ipv4_gateway = "10.13.203.113"
+      ipv4_gateway = "139.178.75.1"
       #dns_server_list = ["156.54.205.68","156.54.240.134"]
     }
   }

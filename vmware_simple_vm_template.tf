@@ -43,7 +43,12 @@ resource "vsphere_virtual_machine" "vm-one" {
   guest_id             = "${data.vsphere_virtual_machine.template.guest_id}"
   scsi_type            = "${data.vsphere_virtual_machine.template.scsi_type}"
   folder               = "${var.region}/vm/${var.foldername}"
-  # Set network parameters
+  tags = ["${vsphere_tag.Application.id}",
+	  "${vsphere_tag.BusinessService.id}",
+	  "${vsphere_tag.CostCenter.id}",
+	  "${vsphere_tag.UserGroup.id}",
+	  "${vsphere_tag.User.id}"]
+	# Set network parameters
   network_interface {
     network_id = "${data.vsphere_network.network.id}"
   }

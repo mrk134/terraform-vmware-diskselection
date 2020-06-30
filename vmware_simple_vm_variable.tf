@@ -59,7 +59,7 @@ variable "vmmemory" {
 }
 variable "vmipaddress" {
     type = string
-    default = "10.10.0.134"
+    default = "139.178.75.14"
 }
 variable "vmtype" {
     type = string

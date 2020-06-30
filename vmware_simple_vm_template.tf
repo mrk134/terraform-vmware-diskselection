@@ -85,8 +85,8 @@ thin_provisioned = "${data.vsphere_virtual_machine.template.disks.0.thin_provisi
   }
 }
 
-data "vsphere_tag_category" "Application" {
-  name        = "Application"
+data "vsphere_tag_category" "category" {
+  name        = "general_info"
   #cardinality = "SINGLE"
   #description = "General Info"
 
@@ -96,48 +96,32 @@ data "vsphere_tag_category" "Application" {
   #]
 }
 
-data "vsphere_tag_category" "BusinessService" {
-  name        = "BusinessService"
-}
-
-data "vsphere_tag_category" "CostCenter" {
-  name        = "CostCenter"
-}
-
-data "vsphere_tag_category" "UserGroup" {
-  name        = "UserGroup"
-}
-
-data "vsphere_tag_category" "User" {
-  name        = "User"
-}
-
 data "vsphere_tag" "Application" {
-  name        = "Apache"
-  category_id = "${data.vsphere_tag_category.Application.id}"
+  name        = "Application"
+  category_id = "${data.vsphere_tag_category.category.id}"
   #description = "Apache"
 }
 
 data "vsphere_tag" "CostCenter" {
-  name        = "Devteam"
-  category_id = "${data.vsphere_tag_category.CostCenter.id}"
+  name        = "CostCenter"
+  category_id = "${data.vsphere_tag_category.category.id}"
   #description = "Digital App"
 }
 
 data "vsphere_tag" "BusinessService" {
-  name        = "Digital App"
-  category_id = "${data.vsphere_tag_category.BusinessService.id}"
+  name        = "BusinessService"
+  category_id = "${data.vsphere_tag_category.category.id}"
   #description = "Devteam"
 }
 
 data "vsphere_tag" "UserGroup" {
-  name        = "ITOM EMEA PLSC"
-  category_id = "${data.vsphere_tag_category.UserGroup.id}"
+  name        = "UserGroup"
+  category_id = "${data.vsphere_tag_category.category.id}"
   #description = "ITOM EMEA PLSC"
 }
 
 data "vsphere_tag" "User" {
-  name        = "Mark Radonic"
-  category_id = "${data.vsphere_tag_category.User.id}"
+  name        = "User"
+  category_id = "${data.vsphere_tag_category.category.id}"
   #description = "Mark Radonic"
 }
